@@ -33,7 +33,8 @@ export const SimpleForm = () => {
         className="form-control"
         placeholder="Username"
         name="username"
-        value={onInputChange}
+        value={username}
+        onChange={onInputChange}
       />
 
 
@@ -42,7 +43,8 @@ export const SimpleForm = () => {
         className="form-control mt-2"
         placeholder="diego@prueba.com"
         name="email"
-        value={onInputChange}
+        value={email}
+        onChange={onInputChange}
       />
       {
         (username === 'diego') && <Message />
