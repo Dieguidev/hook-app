@@ -12,10 +12,15 @@ export const CounterApp = () => {
   return (
     <>
       <h1>Counter: {counter.counter1}</h1>
+      <h1>Counter: {counter.counter2}</h1>
+      <h1>Counter: {counter.counter3}</h1>
       <hr />
       <button
         className="btn"
-        onClick={() => setCounter(counter.counter1 + 1)}
+        onClick={() => setCounter({
+          ...counter,
+          counter1: counter.counter1 + 1,
+        })}
       >+1</button>
     </>
   )
