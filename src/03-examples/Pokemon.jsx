@@ -1,12 +1,29 @@
 import PropTypes from 'prop-types';
+import { useLayoutEffect, useRef, useState } from 'react';
 
-export const Pokemon = ({image, name, id }) => {
+export const Pokemon = ({ image, name, id }) => {
+
+  const pRef = useRef()
+  const [boxSize, setboxSize] = useState({ width: 0, height: 0 })
+
+  useLayoutEffect(() => {
+    const { height, width } = pRef.current.getBoundingClientRect();
+    setboxSize({ height, width })
+  }, [image])
+
   return (
-    <blockquote className="blockquote text-end">
-      <img src={image} alt={name} />
-      <p className="mb-1">{id}</p>
-      <footer className="blockquote-footer">{name}</footer>
-    </blockquote>
+    <>
+      <blockquote
+        className="blockquote text-end"
+        style={{ display: 'flex' }}
+      >
+        <img ref={pRef} src={image} alt={name} />
+        <p className="mb-1">{id}</p>
+        <footer  className="blockquote-footer">{name}</footer>
+      </blockquote>
+
+      <code>{JSON.stringify(boxSize)}</code>
+    </>
   )
 }
 
