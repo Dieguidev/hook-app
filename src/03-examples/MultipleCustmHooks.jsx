@@ -17,7 +17,7 @@ export const MultipleCustmHooks = () => {
   //!!data: data como es undefined al negarlo dos veces, devuelve false, por lo tanto, data es false, por lo tanto, data[0] es undefined, por lo tanto, data[0].author y data[0].quote son undefined, por lo tanto, el console.log no se ejecuta
   // const {author, quote } = !!data && data[0]
 
-console.log(data);
+
   return (
     <>
       <h1>BreakingBad utils</h1>

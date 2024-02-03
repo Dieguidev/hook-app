@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 
 export const Pokemon = ({image, name, id }) => {
   return (
@@ -9,3 +9,9 @@ export const Pokemon = ({image, name, id }) => {
     </blockquote>
   )
 }
+
+Pokemon.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};
